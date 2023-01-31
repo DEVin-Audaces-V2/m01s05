@@ -32,7 +32,7 @@ btnAperta.addEventListener('click', apertouDenovo);
 const vetor = new Array();
 const vetorb = new Array();
 vetor.push(3);
-console.log(vetor);
+//console.log(vetor);
 
 // Criando uma Classe
 
@@ -60,13 +60,13 @@ const r1 = new Retangulo(4, 6);
 const r2 = new Retangulo(5, 3);
 const r3 = new Retangulo(6, 1);
 
-console.log(r1);
-console.log(r2.base);
+//console.log(r1);
+//console.log(r2.base);
 //console.log(r3.#altura);
 
-r1.calculaArea();
-r2.calculaArea();
-r3.calculaArea();
+//r1.calculaArea();
+//r2.calculaArea();
+//r3.calculaArea();
 
 
 class Pessoa {
@@ -87,4 +87,19 @@ class Endereco {
 const endrA = new Endereco("Rua Fulana de Tal", "456");
 const romeu = new Pessoa("Romeu", "0987654321", endrA);
 
-console.log(`${romeu.nome} mora em ${romeu.endereco.logradouro}`);
+//console.log(`${romeu.nome} mora em ${romeu.endereco.logradouro}`);
+
+
+// EXEMPLO EXERCICIO 1
+
+class Funcionario {
+  
+}
+
+const ada = new Funcionario("528.442.040-31", "Ada Lovelace", 1000);
+
+console.log(ada.salario); // 1000
+
+ada.promover(50);
+
+console.log(ada.salario); // 1500
