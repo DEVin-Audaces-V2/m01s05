@@ -37,20 +37,54 @@ console.log(vetor);
 // Criando uma Classe
 
 class Retangulo {
+  base
+  #altura
+
   constructor(base, altura) {
     this.base = base;
-    this.altura = altura;
-    //console.log("Executou o constructor", parametro);
+    this.#altura = altura;
+  }
+
+  calculaArea() {
+    const area = this.base * this.#altura;
+    console.log(area);
+    this.#exemplo();
+  }
+
+  #exemplo() {
+    console.log("Exemplo");
   }
 }
 
 const r1 = new Retangulo(4, 6);
-r1.batata = 555;
 const r2 = new Retangulo(5, 3);
 const r3 = new Retangulo(6, 1);
-const r4 = new Retangulo(2, 1);
 
 console.log(r1);
-console.log(r2);
-console.log(r3);
-console.log(r4);
+console.log(r2.base);
+//console.log(r3.#altura);
+
+r1.calculaArea();
+r2.calculaArea();
+r3.calculaArea();
+
+
+class Pessoa {
+  constructor(nome, rg, endereco) {
+    this.nome = nome;
+    this.rg = rg;
+    this.endereco = endereco;
+  }
+}
+
+class Endereco {
+  constructor(logradouro, numero) {
+    this.logradouro = logradouro;
+    this.numero = numero;
+  }
+}
+
+const endrA = new Endereco("Rua Fulana de Tal", "456");
+const romeu = new Pessoa("Romeu", "0987654321", endrA);
+
+console.log(`${romeu.nome} mora em ${romeu.endereco.logradouro}`);
