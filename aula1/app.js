@@ -92,9 +92,7 @@ const romeu = new Pessoa("Romeu", "0987654321", endrA);
 
 // EXEMPLO EXERCICIO 1
 
-class Funcionario {
-  
-}
+import Funcionario from "./Funcionario.js";
 
 const ada = new Funcionario("528.442.040-31", "Ada Lovelace", 1000);
 
