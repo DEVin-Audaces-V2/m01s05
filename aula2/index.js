@@ -1,0 +1,1 @@
+export { default as Pessoa } from "./exemplo.js";

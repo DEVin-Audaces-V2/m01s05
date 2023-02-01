@@ -1,12 +1,12 @@
 console.log('Aula2');
 
+// EXEMPLOS HERANCA
+
 class Animal {
   som;
-  nrPatas;
 
-  constructor(som, nrPatas) {
+  constructor(som) {
     this.som = som;
-    this.nrPatas = nrPatas;
   }
 
   falar() {
@@ -14,25 +14,40 @@ class Animal {
   }
 }
 
-class Mamifero extends Animal {
-  constructor(som) {
-    super(som, 4);
-  }
-
-  andar() {
-    console.log("andou");
-  }
-}
-
-class Gato extends Mamifero {
+class Gato extends Animal {
   constructor() {
     super("MIAU");
   }
 }
 
+class Cachorro extends Animal {
+  faro;
+
+  constructor(faro) {
+    super("AUAU");
+    this.faro = faro;
+  }
+}
+
 const oliver = new Gato();
+const toto = new Cachorro('bom');
 
-console.log(oliver);
+// console.log(oliver);
+// console.log(toto);
+// oliver.falar();
+// toto.falar();
 
-oliver.falar();
-oliver.andar();
+
+// EXEMPLOS MODULOS
+
+import batata, { texto, numero as outroNome } from "./exemplo.js";
+import { Pessoa } from "./index.js";
+
+console.log(outroNome);
+console.log(texto);
+console.log(batata);
+console.log(Pessoa);
+
+// exemplo
+// const obj = { numero: 42 };
+// const { numero } = obj;
