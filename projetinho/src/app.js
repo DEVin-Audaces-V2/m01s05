@@ -4,23 +4,33 @@ const listaItens = document.getElementById("lista-itens");
 const formulario = document.getElementById("formulario");
 
 let vetorItens = [
-  "item 0",
-  "outro item",
-  "e mais um",
+  {
+    id: 0,
+    label: "item 0",
+  },
+  {
+    id: 1,
+    label: "outro item",
+  },
+  {
+    id: 2,
+    label: "e mais um",
+  }
 ];
 
-function apagaItem(itemParaApagar) {
-  vetorItens = vetorItens.filter(item => item !== itemParaApagar);
+function apagaItemPorId(idParaApagar) {
+  vetorItens = vetorItens.filter(item => item.id !== idParaApagar);
   atualizaTela();
 }
 
 function criaElementoItem(item) {
+  const { id, label } = item;
   const li = document.createElement("li");
-  li.innerHTML = item;
+  li.innerHTML = label;
   const botaoApagar = document.createElement("button");
   botaoApagar.innerHTML = "x";
   botaoApagar.addEventListener("click", () => {
-    apagaItem(item);
+    apagaItemPorId(id);
   });
   li.appendChild(botaoApagar);
   return li;
@@ -38,7 +48,12 @@ function atualizaTela() {
 function adicionaItem() {
   const titulo = campoTitulo.value;
   if (titulo) {
-    vetorItens.push(titulo);
+    vetorItens.push({
+      id: Date.now(),
+      label: titulo
+    });
+    // TODO: Implementar Classe Item
+    // vetorItens.push(new Item(titulo));
     atualizaTela();
     campoTitulo.value = "";
   }
