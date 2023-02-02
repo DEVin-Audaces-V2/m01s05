@@ -1,9 +1,9 @@
 console.log("aula4");
 
 
-import Animal from "./Animal.js";
+import Animale from "./Animal.js";
 
-class Mamifero extends Animal {
+class Mamifero extends Animale {
 
   caminha() {
     console.log("Executou caminha mamifero!");
@@ -25,22 +25,22 @@ class Mamifero extends Animal {
 
 // EXEMPLO POLIMORFISMO
 
-class Animall {
+class Animal {
   speak() {
     console.log("?");
   }
 }
-class Cat extends Animall {
+class Cat extends Animal {
   speak() {
     console.log("Meow");
   }
 }
-class Dog extends Animall {
+class Dog extends Animal {
   speak() {
     console.log("Woof");
   }
 }
-class Duck extends Animall {
+class Duck extends Animal {
   speak() {
     console.log("Quack");
   }
