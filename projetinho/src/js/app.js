@@ -17,24 +17,11 @@ function apagaItemPorId(idParaApagar) {
   atualizaTela();
 }
 
-function criaElementoItem(item) {
-  const { id, label } = item;
-  const li = document.createElement("li");
-  li.innerHTML = label;
-  const botaoApagar = document.createElement("button");
-  botaoApagar.innerHTML = "x";
-  botaoApagar.addEventListener("click", () => {
-    apagaItemPorId(id);
-  });
-  li.appendChild(botaoApagar);
-  return li;
-}
-
 function atualizaTela() {
   listaItens.innerHTML = "";
 
   vetorItens.forEach(item => {
-    const elemento = criaElementoItem(item);
+    const elemento = item.criaElemento(apagaItemPorId);
     listaItens.appendChild(elemento);
   });
 }
@@ -42,11 +29,6 @@ function atualizaTela() {
 function adicionaItem() {
   const titulo = campoTitulo.value;
   if (titulo) {
-    // vetorItens.push({
-    //   id: Date.now(),
-    //   label: titulo
-    // });
-    // TODO: Implementar Classe Item
     const novoItem = new Item(titulo);
     console.log({ novoItem });
     vetorItens.push(novoItem);
