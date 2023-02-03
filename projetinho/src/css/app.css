@@ -60,3 +60,11 @@ footer {
 #lista-itens>li>p:first-child {
   flex-grow: 1;
 }
+
+#formulario {
+  display: flex;
+  gap: 4px;
+}
+#formulario input {
+  flex-grow: 1;
+}
