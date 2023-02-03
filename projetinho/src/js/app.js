@@ -6,9 +6,9 @@ const listaItens = document.getElementById("lista-itens");
 const formulario = document.getElementById("formulario");
 
 let vetorItens = [
-  new Item("item 0"),
-  new Item("outro item"),
-  new Item("e mais um"),
+  new Item("Item 0"),
+  new Item("Outro item"),
+  new Item("E mais um"),
 ];
 
 function apagaItemPorId(idParaApagar) {
