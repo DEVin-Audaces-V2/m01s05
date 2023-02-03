@@ -5,6 +5,11 @@ const campoTitulo = document.getElementById("campo-titulo");
 const listaItens = document.getElementById("lista-itens");
 const formulario = document.getElementById("formulario");
 
+
+// TODO: Criar uma classe Tarefa extends Item
+//       e sobrescreve criar elemento para acrescentar
+//       um checkbox na criação do elemento
+
 let vetorItens = [
   new Item("Item 0"),
   new Item("Outro item"),
