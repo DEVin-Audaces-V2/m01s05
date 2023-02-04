@@ -19,7 +19,7 @@ export default class Item {
     const botaoApagar = document.createElement("button");
     botaoApagar.innerHTML = "x";
     botaoApagar.addEventListener("click", () => {
-      aoApagarItem(this.#id);
+      aoApagarItem(this.id);
     });
     li.appendChild(botaoApagar);
     return li;

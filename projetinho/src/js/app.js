@@ -1,6 +1,8 @@
 import Item from "./Item.js";
+import Tarefa from "./Tarefa.js";
 
 const campoTitulo = document.getElementById("campo-titulo");
+const campoTipo = document.getElementById("campo-tipo");
 //const botaoSalvar = document.getElementById("botao-salvar");
 const listaItens = document.getElementById("lista-itens");
 const formulario = document.getElementById("formulario");
@@ -33,8 +35,13 @@ function atualizaTela() {
 
 function adicionaItem() {
   const titulo = campoTitulo.value;
+  const tipo = campoTipo.value;
+
   if (titulo) {
-    const novoItem = new Item(titulo);
+    const novoItem = tipo === "nota"
+      ? new Item(titulo)
+      : new Tarefa(titulo);
+
     console.log({ novoItem });
     vetorItens.push(novoItem);
     atualizaTela();
